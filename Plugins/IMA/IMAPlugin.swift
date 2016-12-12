@@ -32,6 +32,7 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
     
     private var pictureInPictureProxy: IMAPictureInPictureProxy?
     private var loadingView: UIView?
+    private var lastFrameView: UIView?
     
     private var config: AdsConfig!
     private var adTagUrl: String?
@@ -275,6 +276,21 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
         self.player.view?.bringSubview(toFront: self.loadingView!)
     }
     
+    private func hideOverlays() {
+        self.showLoadingView(false, alpha: 0)
+        self.lastFrameView?.removeFromSuperview()
+    }
+    
+    private func delayLastFrame() {
+        UIGraphicsBeginImageContextWithOptions(self.player.view.bounds.size, false, UIScreen.main.scale)
+        self.player.view?.drawHierarchy(in: self.player.view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        self.lastFrameView = UIImageView.init(image: image)
+        self.player.view?.addSubview(self.lastFrameView!)
+    }
+    
     private func convertToPlayerEvent(_ event: IMAAdEventType) -> AdEvents.Type {
         switch event {
         case .AD_BREAK_READY:
@@ -346,7 +362,7 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
     
     public func adsLoader(_ loader: IMAAdsLoader!, failedWith adErrorData: IMAAdLoadingErrorData!) {
         self.loaderFailed = true
-        self.showLoadingView(false, alpha: 0)
+        self.hideOverlays()
         self.delegate?.adsPlugin(self, loaderFailedWith: adErrorData.adError.message)
         PKLog.error(adErrorData.adError.message)
     }
@@ -358,7 +374,7 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
     }
     
     public func adsManagerAdPlaybackReady(_ adsManager: IMAAdsManager!) {
-        self.showLoadingView(false, alpha: 0)
+        self.hideOverlays()
     }
     
     public func adsManager(_ adsManager: IMAAdsManager!, didReceive event: IMAAdEvent!) {
@@ -383,7 +399,10 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
             }
             break
         case .AD_BREAK_STARTED, .STARTED:
-            self.showLoadingView(false, alpha: 0)
+            self.hideOverlays()
+            break
+        case .COMPLETE:
+            self.delayLastFrame()
             break
         default:
             break
@@ -395,7 +414,7 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
     }
     
     public func adsManager(_ adsManager: IMAAdsManager!, didReceive error: IMAAdError!) {
-        self.showLoadingView(false, alpha: 0)
+        self.hideOverlays()
         self.delegate?.adsPlugin(self, managerFailedWith: error.message)
         PKLog.error(error.message)
     }
@@ -406,7 +425,7 @@ public class IMAPlugin: NSObject, AVPictureInPictureControllerDelegate, PlayerDe
     }
     
     public func adsManagerDidRequestContentResume(_ adsManager: IMAAdsManager!) {
-        self.showLoadingView(false, alpha: 0)
+        self.hideOverlays()
         self.notify(event: AdEvents.adDidRequestResume())
         self.isAdPlayback = false
     }
