@@ -81,7 +81,7 @@ internal class KalturaPluginManager {
             self.delegate?.pluginManagerDidSendAnalyticsEvent(action: .load)
         })
         
-        self.messageBus?.addObserver(self, events: [PlayerEvents.loadedMetadata.self], block: { (info) in
+        self.messageBus?.addObserver(self, events: [PlayerEvents.playing.self], block: { (info) in
             PKLog.trace("play info: \(info)")
             
             if !self.intervalOn {
@@ -104,7 +104,7 @@ internal class KalturaPluginManager {
     private func createTimer() {
         
         if let conf = self.config, let intr = conf.params["timerInterval"] as? Int {
-            self.interval = intr
+            self.interval = intr / 1000 //Convert to seconds
         }
         
         if let t = self.timer {
