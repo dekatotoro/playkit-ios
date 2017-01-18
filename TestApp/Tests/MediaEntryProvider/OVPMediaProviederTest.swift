@@ -32,10 +32,8 @@ class OVPMediaProviederTest: XCTestCase, SessionProvider {
         super.tearDown()
     }
     
-    func testRegularCaseTest() {
+    func _testRegularCaseTest() {
         
-        return; // TEST TEMPORARILY DISABLED.
-
         let theExeption = expectation(description: "test")
         
         let provider = OVPMediaProvider()
@@ -59,10 +57,8 @@ class OVPMediaProviederTest: XCTestCase, SessionProvider {
     }
     
     
-    func test_new_ovp_api() {
+    func _test_new_ovp_api() {
         
-        return; // TEST TEMPORARILY DISABLED.
-
         let theExeption = expectation(description: "test")
         
         let provider = OVPMediaProvider()

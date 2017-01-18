@@ -32,9 +32,7 @@ class OTTMediaProviderTest: XCTestCase, SessionProvider {
         super.tearDown()
     }
     
-    func testRegularCaseTest() {
-        
-        return; // TEST TEMPORARILY DISABLED.
+    func _testRegularCaseTest() {
         
         let theExeption = expectation(description: "test")
         
