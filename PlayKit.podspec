@@ -13,9 +13,9 @@ s.ios.deployment_target = '8.0'
 
 s.subspec 'Core' do |sp|
     sp.source_files = 'Classes/**/*'
-    sp.dependency 'SwiftyJSON'
-    sp.dependency 'Log'
-    sp.dependency 'SwiftyXMLParser'
+    sp.dependency 'SwiftyJSON', '~> 3.1.4'
+    sp.dependency 'Log', '~> 1.0'
+    sp.dependency 'SwiftyXMLParser', '~> 3.0.0'
 end
 
 s.subspec 'IMAPlugin' do |ssp|
@@ -32,7 +32,7 @@ s.subspec 'GoogleCastAddon' do |ssp|
                   'OTHER_LDFLAGS' => '$(inherited) -framework "GoogleCast"',
                   'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
                   'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**' }
-    ssp.dependency 'google-cast-sdk'
+    ssp.dependency 'google-cast-sdk', '~> 3.3.0'
     ssp.dependency 'PlayKit/Core'
 end
 
@@ -42,7 +42,7 @@ s.subspec 'YouboraPlugin' do |ssp|
     'OTHER_LDFLAGS' => '$(inherited) -framework "YouboraLib" -framework "YouboraPluginAVPlayer"',
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
     'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**' }
-    ssp.dependency 'Youbora-AVPlayer/dynamic'
+    ssp.dependency 'Youbora-AVPlayer/dynamic', '~> 5.3.5'
     ssp.dependency 'PlayKit/Core'
 end
 
