@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "PlayKit_Example.app"
-               BlueprintName = "PlayKit_Example"
-               ReferencedContainer = "container:PlayKit.xcodeproj">
+               BuildableName = "TestApp_Example.app"
+               BlueprintName = "TestApp_Example"
+               ReferencedContainer = "container:TestApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "PlayKit_Tests.xctest"
-               BlueprintName = "PlayKit_Tests"
-               ReferencedContainer = "container:PlayKit.xcodeproj">
+               BuildableName = "TestApp_Tests.xctest"
+               BlueprintName = "TestApp_Tests"
+               ReferencedContainer = "container:TestApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "PlayKit_Tests.xctest"
-               BlueprintName = "PlayKit_Tests"
-               ReferencedContainer = "container:PlayKit.xcodeproj">
+               BuildableName = "TestApp_Tests.xctest"
+               BlueprintName = "TestApp_Tests"
+               ReferencedContainer = "container:TestApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "PlayKit_Example.app"
-            BlueprintName = "PlayKit_Example"
-            ReferencedContainer = "container:PlayKit.xcodeproj">
+            BuildableName = "TestApp_Example.app"
+            BlueprintName = "TestApp_Example"
+            ReferencedContainer = "container:TestApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "PlayKit_Example.app"
-            BlueprintName = "PlayKit_Example"
-            ReferencedContainer = "container:PlayKit.xcodeproj">
+            BuildableName = "TestApp_Example.app"
+            BlueprintName = "TestApp_Example"
+            ReferencedContainer = "container:TestApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "PlayKit_Example.app"
-            BlueprintName = "PlayKit_Example"
-            ReferencedContainer = "container:PlayKit.xcodeproj">
+            BuildableName = "TestApp_Example.app"
+            BlueprintName = "TestApp_Example"
+            ReferencedContainer = "container:TestApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
