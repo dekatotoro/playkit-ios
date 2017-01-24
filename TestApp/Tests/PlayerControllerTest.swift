@@ -55,7 +55,7 @@ class PlayerControllerTest: XCTestCase {
             
             
         }
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
     
     func testPauseCommand() {
@@ -71,7 +71,7 @@ class PlayerControllerTest: XCTestCase {
             
         }
         self.player.pause()
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
     
     
@@ -96,6 +96,6 @@ class PlayerControllerTest: XCTestCase {
             }
         }
        
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
 }

@@ -54,7 +54,7 @@ class MessegeBusTest: XCTestCase {
         
         self.player.play()
         
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
     
     func testPlayerPlayEventsFlow() {
@@ -78,7 +78,7 @@ class MessegeBusTest: XCTestCase {
 
         self.player.play()
         
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
     
     func testPlayerPauseEventsFlow() {
@@ -96,7 +96,7 @@ class MessegeBusTest: XCTestCase {
         
         self.player.play()
         
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
     
     func testPlayerSeekEventsFlow() {
@@ -126,6 +126,6 @@ class MessegeBusTest: XCTestCase {
         
         self.player.play()
         
-        waitForExpectations(timeout: 20.0) { (_) -> Void in}
+        waitForExpectations(timeout: 10.0) { (_) -> Void in}
     }
 }
