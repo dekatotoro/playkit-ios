@@ -1,12 +1,11 @@
 language: objective-c
 osx_image: xcode8.2
-podfile: ./TestApp/Podfile
 before_install:
   - gem install cocoapods   # Travis is not always on latest version
   - gem install xcpretty
   - pod repo update > /dev/null
 script:
-  - ./TestApp/test_on_iphone7_sim.sh
+  - ./TestApp/ci-build.sh
 notifications:
   email:
     recipients:
